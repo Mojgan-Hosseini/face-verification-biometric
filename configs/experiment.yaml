@@ -1,0 +1,75 @@
+# ─────────────────────────────────────────────
+# Face Verification Biometric — Experiment Config
+# ─────────────────────────────────────────────
+
+# ── Paths ────────────────────────────────────
+data:
+  lfw_root:    "data/lfw"               # extracted LFW images
+  lfw_pairs:   "data/lfw/pairs.txt"     # official 6000-pair split
+  cfp_root:    "data/cfp-dataset"       # extracted CFP dataset
+  cfp_pairs:   "data/cfp-dataset/Protocol/Pair_list_F.txt"
+
+results_dir:  "results"
+plots_dir:    "plots"
+
+# ── Models ───────────────────────────────────
+models:
+  - name: "lbp_svm"
+    display: "LBP + SVM (Classical)"
+  - name: "facenet"
+    display: "FaceNet (InceptionResNetV1)"
+    weights: "vggface2"               # or "casia-webface"
+  - name: "arcface"
+    display: "ArcFace (ResNet50)"
+    model_pack: "buffalo_l"           # insightface model pack
+
+# ── Datasets ─────────────────────────────────
+datasets:
+  - name: "lfw"
+    display: "LFW (Constrained)"
+    num_pairs: 6000
+  - name: "cfp_fp"
+    display: "CFP-FP (Frontal-Profile)"
+    num_pairs: 7000
+
+# ── Degradation sweep ────────────────────────
+degradation:
+  types:
+    - name: "blur"
+      display: "Gaussian Blur"
+      param: "sigma"
+      levels: [0.0, 0.5, 1.0, 2.0, 3.5, 5.0]
+
+    - name: "low_light"
+      display: "Low-Light (gamma)"
+      param: "gamma"
+      levels: [1.0, 1.5, 2.0, 3.0, 4.0, 5.0]   # >1 darkens
+
+    - name: "sketch"
+      display: "Sketch-Style"
+      param: "strength"
+      levels: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+
+# ── Biometric metrics ─────────────────────────
+metrics:
+  far_thresholds: [0.001, 0.0001, 0.00001]   # TAR@FAR=0.1%, 0.01%, 0.001%
+  roc_num_points: 500
+
+# ── LBP parameters ───────────────────────────
+lbp:
+  image_size: [128, 128]
+  n_points: 24
+  radius: 3
+  n_bins: 256
+  svm_C: 1.0
+  svm_kernel: "rbf"
+
+# ── Face detection / alignment ────────────────
+face:
+  image_size: 160        # FaceNet input
+  margin: 20
+  min_face_size: 40
+  device: "auto"         # "cpu" | "cuda" | "auto"
+
+# ── Reproducibility ──────────────────────────
+seed: 42

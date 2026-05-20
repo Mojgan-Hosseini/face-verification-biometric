@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data (large binary files — download with scripts in data/)
+data/lfw/
+data/cfp-dataset/
+data/*.tgz
+data/*.zip
+
+# Model weights (downloaded automatically by insightface/facenet-pytorch)
+~/.insightface/
+*.onnx
+*.pt
+*.pth
+
+# Generated outputs (reproducible — regenerate with experiments/)
+results/
+plots/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
