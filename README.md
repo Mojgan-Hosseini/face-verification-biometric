@@ -26,23 +26,15 @@ Standard constrained face verification: 6,000 pairs (3,000 genuine + 3,000 impos
 
 | Model | EER (%) ↓ | AUC ↑ | TAR@FAR=0.1% ↑ |
 |---|---|---|---|
-| LBP + SVM (Classical) | ~20.5 | ~0.865 | ~42.3% |
-| FaceNet (VGGFace2) | ~1.8 | ~0.993 | ~95.2% |
-| ArcFace (buffalo_l) | ~0.5 | ~0.999 | ~99.1% |
-
-> Values shown are representative literature baselines. Replace with your experimental outputs from `results/benchmark_summary.json`.
+| LBP + cosine (Classical) | 45.6 | 0.561 | 0.9% |
+| FaceNet (VGGFace2) | 4.6 | 0.979 | 93.3% |
+| ArcFace (buffalo_l) | 2.8 | 0.987 | 96.9% |
 
 ### CFP-FP — Celebrities in Frontal-Profile
 
 Hard benchmark: 7,000 pairs pairing frontal images against ~90° profile images. Tests cross-pose robustness — the dominant challenge in heterogeneous face recognition.
 
-| Model | EER (%) ↓ | AUC ↑ | TAR@FAR=0.1% ↑ |
-|---|---|---|---|
-| LBP + SVM (Classical) | ~37.2 | ~0.716 | ~8.4% |
-| FaceNet (VGGFace2) | ~5.1 | ~0.975 | ~82.6% |
-| ArcFace (buffalo_l) | ~2.8 | ~0.991 | ~93.5% |
-
-> CFP-FP is significantly harder than LFW. The gap between classical and deep methods is much larger here, demonstrating that deep embeddings learn pose-invariant representations that hand-crafted features cannot.
+> CFP-FP evaluation not included in this experiment. The dataset requires registration at cfpw.io. Results on LFW above demonstrate the classical vs. deep gap clearly.
 
 ---
 
