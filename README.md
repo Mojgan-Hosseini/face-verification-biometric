@@ -204,21 +204,7 @@ All transforms are pure functions `f(image, intensity) → image`:
 
 ---
 
-## Citation
-
-If you use this codebase in research, please cite:
-
-```bibtex
-@misc{hosseini2026fvbio,
-  author    = {Hosseini, Mojgan},
-  title     = {Face Verification Biometric: Classical vs. Deep, Cross-Domain Robustness},
-  year      = {2026},
-  publisher = {GitHub},
-  url       = {https://github.com/Mojgan-Hosseini/face-verification-biometric}
-}
-```
-
-### Key references
+## References
 
 - **LBP**: Ahonen et al., "Face Description with Local Binary Patterns," TPAMI 2006
 - **FaceNet**: Schroff et al., "FaceNet: A Unified Embedding," CVPR 2015
