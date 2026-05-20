@@ -121,12 +121,14 @@ pip install -r requirements.txt
 
 ### 2. Download datasets
 
-```bash
-# LFW (~173 MB, no registration required)
-bash data/download_lfw.sh
+Download the LFW deepfunneled dataset from [Kaggle](https://www.kaggle.com/datasets/jessicali9530/lfw-dataset) and place it under `data/lfw/` so the structure looks like:
 
-# CFP-FP (requires free registration at http://www.cfpw.io/)
-bash data/download_cfp.sh "YOUR_DOWNLOAD_URL"
+```
+data/lfw/
+  pairs.txt
+  George_W_Bush/
+    George_W_Bush_0001.jpg
+    ...
 ```
 
 ### 3. Run benchmark
