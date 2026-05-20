@@ -226,8 +226,3 @@ If you use this codebase in research, please cite:
 - **LFW**: Huang et al., "Labeled Faces in the Wild," UMass TR 2007
 - **CFP**: Sengupta et al., "Frontal to Profile Face Verification," WACV 2016
 
----
-
-## License
-
-MIT
